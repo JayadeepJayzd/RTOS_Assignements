@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<stdlib.h>
+int main(int argc,char *argv[])
+{
+        int ret_val,i;
+        int vow,con,digit,space;
+        char line[200];
+        vow=0;
+
+        printf("parent process id of current process:%d\n",getppid());
+        printf("the current parent process:%d\n",getpid());
+        printf("creating child process\n");
+        ret_val=fork();
+
+        if(ret_val<0)
+        {
+                printf("child process not creted\n");
+        }
+        else if(ret_val==0)
+        {
+         printf("inside child process\n");
+         printf("the child process id :%d\n",getpid());
+         line[i] = *argv[1];
+         sleep(5);
+         fgets(line,sizeof(line),stdin);
+         for(int i=0;line[i]!='\0';i++)
+         {
+          if(line[i] == 'a'|| line[i] == 'e'|| line[i] == 'i'|| line[i] == 'o'|| line[i] == 'u' )
+          {
+          ++vow;
+          }
+          else
+          {
+
+           return vow;
+          }
+
+         }
+
+        }
+        else
+        {
+        wait(NULL);
+        printf("parent process\n");
+		 }
+}
