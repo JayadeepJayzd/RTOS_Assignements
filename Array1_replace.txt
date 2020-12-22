@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+void replace_index();
+int i=0,j=0;
+int arr1[10] = {1,2,3,4,5,6,7,8,9,10};
+int arr2[10] = {11,12,13,14,15,16,17,18,19,20};
+
+int main()
+{
+ replace_index();
+}
+void replace_index()
+{
+  for(j=0;j<10;j++)
+ {
+    i++;
+      if(j%2==0 && i%2!=0)
+      {
+
+      arr2[j] = arr1[i];
+
+      }
+
+ }
+ for(j=0;j<10;j++)
+ {
+   printf("the new array elements are %d\n",arr2[j]);
+ }
+}
