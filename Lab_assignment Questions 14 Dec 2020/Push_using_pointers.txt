@@ -1,0 +1,30 @@
+/// program to push first array elements using pointers
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+int arr1[10] = {1,2,3,4,5,6,7,8,9,10};
+int arr2[5] = {11,12,13,14,15};
+void push(int *one,int *two);
+int main()
+{
+  push(&arr1,&arr2);
+  //push(arr1,arr2);
+}
+void push(int *one,int *two)
+{
+ int buffer[10];
+ int i;
+ //int n1 = sizeof(arr1);
+ //int array3[10] = *one;
+ for(i =0 ;i<10;i++)//to push first elements
+ {
+ if(*one == arr1[0])
+  {
+   while(*one != '\0')
+   {
+   buffer[i] = *one++;
+   printf("the pushed element is %d\n ",buffer[i]);
+   }
+  }
+ }
+}
